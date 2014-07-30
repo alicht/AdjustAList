@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :user_added_list
+  resources :user_added_list, :getting_a_twitter_list
   root to: 'getting_a_twitter_list#welcome'
   get 'auth/twitter/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+  # get  'getting_a_twitter_list#index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   
