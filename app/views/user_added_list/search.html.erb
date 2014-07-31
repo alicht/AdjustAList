@@ -1,0 +1,26 @@
+<% @twitter_subscriptions.each do |name, url| %>
+  <%= link_to name, url, target: 'blank' %>
+<% end %>
+
+<% @twitter_owned_lists.each do |name, url| %>
+  <%= link_to name, url, target: 'blank' %>
+<% end %>
+<%# @twitter_subscriptions.each do |subscription| %>
+  <%#= subscription.name %>
+  <%# end %>
+  
+  <%# @twit_s.each do |url| %>
+  <%#= url_address.url %>
+<%# end %>
+
+<%# @twitter_owned_lists.each do |owned_list| %>
+  <%#= owned_list.name %>
+  <%# end %>
+  
+<%# @twit_ol.each do |url| %>
+  <%#= url_address.url %>
+<%# end %>
+<br>
+<br>
+<%= link_to "Home", "/" %>
+<%= link_to "Back", "/getting_a_twitter_list" %>
