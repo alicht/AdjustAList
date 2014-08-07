@@ -11,30 +11,54 @@ class UserAddedListController < ApplicationController
     end
     twitter_username = params[:name]
 
-    tc_subscription = twitter_client.subscriptions(twitter_username)
-    tc_ol = twitter_client.owned_lists(twitter_username)
-
+    subscriptions = twitter_client.subscriptions(twitter_username)
+    owned_lists = twitter_client.owned_lists(twitter_username)
     @twitter_subscriptions = {}
-    # make an instance variable, so that data can be used in the view
+    #make an instance variable, so that data can be used in the view
     @twitter_owned_lists = {}
 
-    tc_subscription.each do |subs|
-      @twitter_subscriptions[subs.name] = subs.url.to_s
+    subscriptions.each do |list|
+      @twitter_subscriptions[list.name] = { 
+        list_url: list.url.to_s,
+        list_members: []
+      }
+      twitter_client.list_members(list).attrs[:users].each do |member|
+        @twitter_subscriptions[list.name][:list_members] << {user_name: member[:screen_name], url: "http://twitter.com/#{member[:screen_name]}" }
+      end
+
     end
 
-    tc_ol.each do |subs|
-      @twitter_owned_lists[subs.name] = subs.url.to_s
+
+     owned_lists.each do |list|
+      @twitter_owned_lists[list.name] = { 
+        list_url: list.url.to_s,
+        list_members: []
+      }
+      twitter_client.list_members(list).attrs[:users].each do |member|
+        @twitter_owned_lists[list.name][:list_members] << {user_name: member[:screen_name], url: "http://twitter.com/#{member[:screen_name]}" }
+      end
+
     end
-    #do your stuff with comments_from_form here
-    # @twit_s = @twitter_subscriptions.to_a.map do |subscriptions| 
-    #   subscriptions.url.to_s
+
+    # owned_lists.each do |list|
+    #   @twitter_owned_lists[list.name] = list.url.to_s
     # end
-    # @twit_ol = @twitter_owned_lists.to_a.map do|owned_lists| 
-    #   owned_lists.url.to_s
+    # #do your stuff with comments_from_form here
+    # @twitter_list_members = {}
+
+    # list_members = subscriptions.map do |list|
+    #   twitter_client.list_members(list)
     # end
 
-    #  @twit_s= twit_subscriptions[0].origin + twit_subscriptions[0].path
-    # @twit_ol = twit_owned_lists[0].origin + twit_owned_lists[0].path
-    # binding.pry
+    # list_members[0].attrs[:users][0][:screen_name]
+    # @twitter_list_members[list.screen_name] = "twitter.com/#{screen_name}"
   end
 end
+
+# subscription = subscriptions.to_h
+# subscription[:lists][0][:user][:screen_name]
+
+# subscriptions.map do |list|
+# twitter_client.list_members(list)
+# end
+
