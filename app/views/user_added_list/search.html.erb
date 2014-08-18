@@ -6,19 +6,19 @@
 
 <% @twitter_subscriptions.each do |name, list_data| %>
   <%= link_to name, list_data[:list_url], target: 'blank' %>
-  <% list_data[:list_members].each do |member| %>
+  <%# list_data[:list_members].each do |member| %>
 
-    <%= link_to member[:user_name], member[:url], target: 'blank' %>
-  <% end %>
+    <%#= link_to member[:user_name], member[:url], target: 'blank' %>
+  <%# end %>
 <% end %>
 
 
 <% @twitter_owned_lists.each do |name, list_data| %>
   <%= link_to name, list_data[:list_url], target: 'blank' %>
-  <% list_data[:list_members].each do |member| %>
+  <%# list_data[:list_members].each do |member| %>
 
-    <%= link_to member[:user_name], member[:url], target: 'blank' %>
-  <% end %>
+    <%#= link_to member[:user_name], member[:url], target: 'blank' %>
+  <%# end %>
 <% end %>
 
 <%# @twitter_owned_lists.each do |name, url| %>
