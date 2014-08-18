@@ -1,6 +1,6 @@
 class GettingATwitterListController < ApplicationController
   def index
-   
+  
   end
 
   # def run

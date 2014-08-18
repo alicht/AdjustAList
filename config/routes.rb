@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/getting_a_twitter_list', to: 'getting_a_twitter_list#twitter_list'
   get '/search', to: 'user_added_list#search'
   get '/user_added_list', to: 'user_added_list#create'
+  get '/search', to: 'user_added_list#find_new_user_to_add'
 
   # get  'getting_a_twitter_list#index'
   # You can have the root of your site routed with "root"
