@@ -1,0 +1,5 @@
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:name, "Find another Twitter user:") %>
+  <%= text_field_tag(:name,) %>
+  <%= submit_tag("Search") %>
+<% end %>
