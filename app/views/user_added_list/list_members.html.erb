@@ -1,5 +1,13 @@
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:name, "Find another Twitter user:") %>
-  <%= text_field_tag(:name,) %>
-  <%= submit_tag("Search") %>
-<% end %>
+<%# @twitter_owned_lists.each do |list| %>
+  <p><%#= list.inspect %></p> 
+<%# end %>
+
+<%# @twitter_owned_lists.each do |name, list_data| %>
+  <%# name, list_data[:list_members].each do |member| %>
+  <%#= link_to member[:user_name], member[:url], target: 'blank' %>
+<%# end %>
+<%# end %>
+
+<% @members.each do |member| %>
+  <%= member.name %></br>
+<% end -%>
