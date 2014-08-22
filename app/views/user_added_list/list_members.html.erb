@@ -20,7 +20,11 @@
 
 
 
+<%= form_tag do %>
 <% @members.each do |member| %>
-  
+  <%= check_box_tag("nil",) %>
+  <%# check_box_tag 'remove'%>
+  <%#= link_to "Remove", remove_list_members_path(params[:list_id], member.id) %>
   <%= link_to member.name, "http://twitter.com/#{member.user_name}" %></br>
+<% end %>
 <% end -%>

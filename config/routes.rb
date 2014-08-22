@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   get "/list_members/:list_id" => 'user_added_list#list_members', as: "list_members" 
 
+  get "/list_members/:list_id/:id" => 'user_added_list#remove_list_members', as: "remove_list_members"
+
   # get  'getting_a_twitter_list#index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
