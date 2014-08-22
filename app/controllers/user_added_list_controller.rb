@@ -1,6 +1,7 @@
 class UserAddedListController < ApplicationController
   
   def index
+    
   end
 
   def search
