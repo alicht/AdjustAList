@@ -41,9 +41,14 @@ class UserAddedListController < ApplicationController
     end
     @list_id = params[:id].to_i 
     @users = params[:list][:usernames]
+    # Get the current members of the list
+    # Remove members from the array if they are in @users #reject medthod
+    # Create an array with all the usernames you're going to add to the list
+    # Pass that to twitter_client.add_list_members
     @remove_members = twitter_client.remove_list_members(@list_id, @users)
     redirect_to list_members_path(@list_id)
     @new_list = twitter_client.create_list(params[:name_of_list])
+    binding.pry
     @add_members = twitter_client.add_list_member(@new_list, params[:user_to_add])
   end
 
