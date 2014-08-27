@@ -49,22 +49,29 @@
   <br>
 
   <div class="field">
-    <%= label_tag :user_to_add, 'User to Add: '%><br>
-    <%= text_field_tag :user_to_add %><br>
+    <label for"user_to_add">User to Add: </label> <br>
+    <input class=​"user_to_add" name="user_to_add[]" type="text">
+    <br>
+   
   </div>
-<!--   <div class = "field">
-    <%# label_tag :user_to_add, 'User to Add: '%><br>
-    <%# text_field_tag :user_to_add %><br>
-  </div>
-  <div class = "field">
-    <%# label_tag :user_to_add, 'User to Add: '%><br>
-    <%# text_field_tag :user_to_add %><br>
-  </div> -->
 
+  <div id="usersWrapper"></div>
+  <div id="addUser"></div>
+
+  <button type="button" id="add-user">Add another user!</button>
+  
+ <!-- <a href="#" id="add-user">"Add another user!"</a> -->
   <div class="action">
     <%= submit_tag 'Submit' %>
-  </div%>
+  </div>
 <% end %>
+ <div class="hidden user-form">
+    <label for"user_to_add">User to Add: </label> <br>
+    <input class=​"user_to_add" name="user_to_add[]" type="text">
+    <br>
+   <br>
+  </div>
+
 
 <!-- i want my form to submit to /lists, the form tag to direct to a url, and then I'll make my route "undefine route posts".
 route going to a controller action, in params should have all info submitted -->

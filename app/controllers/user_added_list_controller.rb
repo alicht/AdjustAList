@@ -50,11 +50,11 @@ class UserAddedListController < ApplicationController
         @current_members << user[:screen_name] 
       end
     end
-    @current_members << params[:user_to_add]
+    @current_members = @current_members + params[:user_to_add]
     @new_list = twitter_client.create_list(params[:name_of_list])
     @add_members = twitter_client.add_list_members(@new_list, @current_members)
-    redirect_to list_members_path(@list_id)
-
+    # redirect_to list_members_path(@list_id)
+      redirect_to thanks_path 
 
     # Pass that to twitter_client.add_list_members
     # @remove_members = twitter_client.remove_list_members(@list_id, @users)
@@ -79,6 +79,10 @@ class UserAddedListController < ApplicationController
   #   end
   #   @add_members = twitter_client.add_list_members(list, users)
   # end
+
+  def thanks
+
+  end
 
   private
 
