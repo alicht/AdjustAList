@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/list_members/:list_id" => 'user_added_list#list_members', as: "list_members" 
 
   get "/list_members/:list_id/:id" => 'user_added_list#remove_list_members', as: "remove_list_members"
+  get '/thanks' => 'user_added_list#thanks'
 
   # get "/list_members/:list_id/:id" => 'user_added_list#create_new_list', as: "create_new_list"
 
