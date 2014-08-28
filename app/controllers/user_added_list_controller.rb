@@ -7,11 +7,12 @@ class UserAddedListController < ApplicationController
   def search
     # i sent a text box to the controller, here i am
     # how do i access that data
+    binding.pry
     twitter_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['twitter_consumer_key']
       config.consumer_secret     = ENV['twitter_consumer_secret']
-      config.access_token        = current_user.access_token
-      config.access_token_secret = current_user.access_token_secret
+      config.access_token        = ENV['twitter_access_token']
+      config.access_token_secret = ENV['twitter_access_token_secret']
     end
     twitter_username = params[:name]
 
@@ -25,8 +26,8 @@ class UserAddedListController < ApplicationController
     twitter_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['twitter_consumer_key']
       config.consumer_secret     = ENV['twitter_consumer_secret']
-      config.access_token        = current_user.access_token
-      config.access_token_secret = current_user.access_token_secret
+      config.access_token        = ENV['twitter_access_token']
+      config.access_token_secret = ENV['twitter_access_token_secret']
     end
     @list_id = params[:list_id].to_i 
     @members = twitter_client.list_members(@list_id)
@@ -36,8 +37,8 @@ class UserAddedListController < ApplicationController
     twitter_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['twitter_consumer_key']
       config.consumer_secret     = ENV['twitter_consumer_secret']
-      config.access_token        = current_user.access_token
-      config.access_token_secret = current_user.access_token_secret
+      config.access_token        = ENV['twitter_access_token']
+      config.access_token_secret = ENV['twitter_access_token_secret']
     end
     @list_id = params[:id].to_i 
     @users = params[:list][:usernames]
