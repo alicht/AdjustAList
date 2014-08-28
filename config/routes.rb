@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :user_added_list
-  root to: 'getting_a_twitter_list#welcome'
+  root 'getting_a_twitter_list#welcome'
   get 'auth/twitter/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get "/list_members/:list_id" => 'user_added_list#list_members', as: "list_members" 
 
   get "/list_members/:list_id/:id" => 'user_added_list#remove_list_members', as: "remove_list_members"
-  get '/thanks' => 'user_added_list#thanks'
+  get 'thanks' => 'user_added_list#thanks'
 
   # get "/list_members/:list_id/:id" => 'user_added_list#create_new_list', as: "create_new_list"
 

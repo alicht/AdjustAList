@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.1'
 
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -38,6 +39,8 @@ gem 'better_errors'
 gem 'binding_of_caller'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'rails_12factor'
+
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
