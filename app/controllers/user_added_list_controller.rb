@@ -7,7 +7,6 @@ class UserAddedListController < ApplicationController
   def search
     # i sent a text box to the controller, here i am
     # how do i access that data
-    binding.pry
     twitter_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['twitter_consumer_key']
       config.consumer_secret     = ENV['twitter_consumer_secret']
@@ -47,7 +46,7 @@ class UserAddedListController < ApplicationController
     # Create an array with all the usernames you're going to add to the list
     @current_members = []
     twitter_client.list_members(@list_id).each do |user|
-      if !@users.include? user[:screen_name] 
+      if @users.include? user[:screen_name] 
         @current_members << user[:screen_name] 
       end
     end
