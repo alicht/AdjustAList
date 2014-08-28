@@ -1,0 +1,80 @@
+<%# @twitter_owned_lists.each do |list| %>
+  <p><%#= list.inspect %></p> 
+<%# end %>
+
+<%# @twitter_owned_lists.each do |name, list_data| %>
+  <%# name, list_data[:list_members].each do |member| %>
+  <%#= link_to member[:user_name], member[:url], target: 'blank' %>
+<%# end %>
+<%# end %>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:name, " Search for another Twitter User's lists: @") %>
+  <%= text_field_tag(:name,) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<%= link_to "Back", "/search" %>
+<br>
+<br>
+
+
+
+<%#= form_tag do %>
+<%# @members.each do |member| %>
+
+  <%#= check_box_tag(member.name) %>
+  <%# check_box_tag 'remove'%>
+  <%#= link_to "Remove", remove_list_members_path(params[:list_id], member.id) %>
+  <%#= link_to member.name, "http://twitter.com/#{member.user_name}" %></br>
+<%# end %>
+<%# end -%>
+<%= form_tag("list_members/#{@list_id}", method: "get") do %>
+  <%= collection_check_boxes(:list, :usernames, @members, :screen_name, :name) do 
+    |b| %>
+    <%= b.check_box %>
+    <%= link_to b.text, "http://twitter.com/#{b.value}" %><br />
+  <% end %>
+
+  <p><%= link_to "Twitter", "https://twitter.com" %> </p>
+
+
+  <br>
+  <br>
+  <div class="field"> 
+    <%= label_tag :name_of_list, 'Name of New List: '%><br>
+    <%= text_field_tag :name_of_list %><br>
+  </div>
+  <br>
+  <br>
+
+  <div class="field">
+    <label for"user_to_add">User to Add: </label> <br>
+    <input class=​"user_to_add" name="user_to_add[]" type="text">
+    <br>
+   
+  </div>
+
+  <div id="usersWrapper"></div>
+  <div id="addUser"></div>
+
+  <button type="button" id="add-user">Add another user!</button>
+  
+ <!-- <a href="#" id="add-user">"Add another user!"</a> -->
+  <div class="action">
+    <%= submit_tag 'Submit' %>
+  </div>
+<% end %>
+ <div class="hidden user-form">
+    <label for"user_to_add">User to Add: </label> <br>
+    <input class=​"user_to_add" name="user_to_add[]" type="text">
+    <br>
+   <br>
+  </div>
+
+
+<!-- i want my form to submit to /lists, the form tag to direct to a url, and then I'll make my route "undefine route posts".
+route going to a controller action, in params should have all info submitted -->
+
+<!-- #where are we submitting this form to? -->
+<!-- route, which ooints to a controller which will look at the oarams, param will be the users who you want to keep (0,1) -->

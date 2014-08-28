@@ -1,0 +1,41 @@
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:name, "Find another Twitter user:") %>
+  <%= text_field_tag(:name,) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% @subscriptions.each do |twitter_list| %>
+  <%#= link_to name, list_data[:list_url], target: 'blank' %>
+  <%= link_to twitter_list.name, list_members_path(twitter_list.id)%>
+  <%# list_data[:list_members].each do |member| %>
+
+    <%#= link_to member[:user_name], member[:url], target: 'blank' %>
+  <%# end %>
+<% end %>
+
+
+<% @owned_lists.each do |twitter_list| %>
+  <%#= link_to name, list_data[:list_url], target: 'blank' %>
+  <%= link_to twitter_list.name, list_members_path(twitter_list.id)%>
+  <%# list_data[:list_members].each do |member| %>
+
+    <%#= link_to member[:user_name], member[:url], target: 'blank' %>
+  <%# end %>
+<% end %>
+
+
+
+
+<%# @twitter_owned_lists.each do |name, url| %>
+  <%#= link_to name, url, target: 'blank' %>
+<%# end %>
+  
+<%# @twitter_list_members.each do |name, url| %>
+<%#= link_to name, url, target: 'blank' %>
+<%# end %>
+  
+
+<br>
+<br>
+<%= link_to "Home", "/" %>
+<%= link_to "Back", "/getting_a_twitter_list" %>
