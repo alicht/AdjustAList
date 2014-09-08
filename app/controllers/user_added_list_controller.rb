@@ -39,6 +39,7 @@ class UserAddedListController < ApplicationController
       config.access_token_secret = ENV['twitter_access_token_secret']
     end
     @list_id = params[:id].to_i 
+
     @users = params[:list][:usernames]
     @current_members = []
     twitter_client.list_members(@list_id).each do |user|
@@ -49,7 +50,10 @@ class UserAddedListController < ApplicationController
     @current_members = @current_members + params[:user_to_add]
     @new_list = twitter_client.create_list(params[:name_of_list])
     @add_members = twitter_client.add_list_members(@new_list, @current_members)
-      redirect_to thanks_path 
+    # @name = params
+    render template: "user_added_list/thanks"
+    # redirect_to thanks_path(@new_list.name)
+      #redirect vs render
   end
 
 
@@ -60,6 +64,7 @@ class UserAddedListController < ApplicationController
     #   config.access_token        = ENV['twitter_access_token']
     #   config.access_token_secret = ENV['twitter_access_token_secret']
     # end
+    # binding.pry
     # @name = params[:name]
     # @new_list = twitter_client.create_list(params[:name_of_list])
 

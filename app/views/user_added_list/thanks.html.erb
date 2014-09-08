@@ -1,10 +1,12 @@
 <h1>"Thanks for using Adjust-A-List!"</h1>
 
-<h2><p> "Your list <%= link_to "#{@new_list}", "https://twitter.com/#{@name}/lists/#{@new_list}"
-%>  is now on Twitter!"</h2></p>
+<h2><p> "Your list <%= link_to "#{@new_list.name}", "https://twitter.com/#{current_user.name}/lists/#{@new_list.name}"
+%>  is now live on Twitter!"</h2></p>
 
-<h3>Send Tweet: "I just created a new Twitter list <%= link_to "#{@list_name}", "https://twitter.com/#{@name}/lists/#{@new_list}"
-%> using <%=link_to "@AdjustAList", "https://twitter.com/AdjustAList", target: "blank" %> check it out!"</h3>
-
+<%= text_area :person, :name, value: "I just created a new Twitter list #{@new_list.name} https://twitter.com/#{current_user.name}/lists/#{@new_list.name} using @AdjustAList. Check it out! www.adjustalist.com", size: "100x30" %>
+<br>
+  <%= submit_tag("Tweet!") %>
+  
+<br>
 <%= link_to "Back", "/search" %>
 <%= link_to "Home", "/" %>
