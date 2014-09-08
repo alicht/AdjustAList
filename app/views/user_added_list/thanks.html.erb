@@ -1,8 +1,9 @@
 <h1>"Thanks for using Adjust-A-List!"</h1>
 
-<h2> "Your list @ is now on Twitter!"</h2>
+<h2><p> "Your list <%= link_to "#{@new_list}", "https://twitter.com/#{@name}/lists/#{@new_list}"
+%>  is now on Twitter!"</h2></p>
 
-<h3>Send Tweet: "I just created a new Twitter list <%= link_to "#{@list_name}", "https://twitter.com/#{@name}/lists/#{@list_name}"
+<h3>Send Tweet: "I just created a new Twitter list <%= link_to "#{@list_name}", "https://twitter.com/#{@name}/lists/#{@new_list}"
 %> using <%=link_to "@AdjustAList", "https://twitter.com/AdjustAList", target: "blank" %> check it out!"</h3>
 
 <%= link_to "Back", "/search" %>

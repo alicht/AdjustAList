@@ -2,4 +2,42 @@
 
 <p> "Please select a list from a Twitter user" </p>
 
-<%= link_to "A User's Twitter list", "/getting_a_twitter_list" %>
+<%= link_to "A User's Twitter list", "/getting_a_twitter_list", class: "btn btn-lg btn-theme-color" %>
+
+<section id="navigation">
+            <div class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">codeon</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#work">Work</a></li>
+
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle js-activated">Pages <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="blog-list.html">Blog List</a></li>
+                                    <li><a href="blog-post.html">Blog Post</a></li>
+                                    <li><a href="single-work.html">Portfolio Single</a></li>
+                                    <li><a href="soon.html">Coming Soon</a></li>
+                                </ul>                               
+                            </li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container -->
+            </div>
+        </section><!--navigation section end here-->

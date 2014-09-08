@@ -1,13 +1,3 @@
-<%# @twitter_owned_lists.each do |list| %>
-  <p><%#= list.inspect %></p> 
-<%# end %>
-
-<%# @twitter_owned_lists.each do |name, list_data| %>
-  <%# name, list_data[:list_members].each do |member| %>
-  <%#= link_to member[:user_name], member[:url], target: 'blank' %>
-<%# end %>
-<%# end %>
-
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:name, " Search for another Twitter User's lists: @") %>
   <%= text_field_tag(:name,) %>
@@ -18,23 +8,16 @@
 <br>
 <br>
 
-
-
-<%#= form_tag do %>
-<%# @members.each do |member| %>
-
-  <%#= check_box_tag(member.name) %>
-  <%# check_box_tag 'remove'%>
-  <%#= link_to "Remove", remove_list_members_path(params[:list_id], member.id) %>
-  <%#= link_to member.name, "http://twitter.com/#{member.user_name}" %></br>
-<%# end %>
-<%# end -%>
+<h4><%= "#{@name}'s List of #{@subscriptions || @owned_lists}" %> </h4>
+<ol>
 <%= form_tag("list_members/#{@list_id}", method: "get") do %>
-  <%= collection_check_boxes(:list, :usernames, @members, :screen_name, :name) do 
-    |b| %>
-    <%= b.check_box %>
-    <%= link_to b.text, "http://twitter.com/#{b.value}", target: "blank" %><br />
+
+  <%= collection_check_boxes(:list, :usernames, @members, :screen_name, :name) do |b| %>
+    <li>
+     <%= b.check_box %>
+    <%= link_to b.text, "http://twitter.com/#{b.value}", target: "blank" %></li><br/>  
   <% end %>
+</ol>
 
   <p><%= link_to "Twitter", "https://twitter.com" %> </p>
 
@@ -71,6 +54,185 @@
     <br>
    <br>
   </div>
+
+  <section id="services" class="padding-80">
+
+
+            <div class="services-section-1">
+                <div class="container">
+                    <div class="section-heading text-center">
+                        <h4 class="small section-title"><span>What we do?</span></h4>
+                        <h2 class="large section-title">Our Services</h2>
+                    </div><!--section heading-->             
+
+                </div><!--container-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="margin-btm-40">
+                                <h4>Flexibility built in</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. Donec vitae dolor lectus. Etiam facilisis rutrum vestibulum. In at ligula vitae lectus porta posuere vel vel est. Aliquam interdum mi vitae arcu fermentum iaculis. Sed feugiat.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 wow animated fadeInLeft" data-wow-delay="0.3s">
+
+                            <div class="row margin-btm-20">
+                                <div class="col-md-2">
+                                    <div class="services-icon">
+                                        <i class="ion-images"></i>
+                                    </div> 
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="services-info">
+                                        <h3>Website design</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!--.services row end-->
+                            <div class="row margin-btm-20">
+                                <div class="col-md-2">
+                                    <div class="services-icon">
+                                        <i class="ion-speakerphone"></i>
+                                    </div> 
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="services-info">
+                                        <h3>Marketing </h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!--.services row end-->
+                            <div class="row margin-btm-20">
+                                <div class="col-md-2">
+                                    <div class="services-icon">
+                                        <i class="ion-leaf"></i>
+                                    </div> 
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="services-info">
+                                        <h3>Logo design </h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!--.services row end-->
+                            <div class="row margin-btm-20">
+                                <div class="col-md-2">
+                                    <div class="services-icon">
+                                        <i class="ion-speedometer"></i>
+                                    </div> 
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="services-info">
+                                        <h3>Search engine optimization(seo) </h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!--.services row end-->
+                        </div>
+                        <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
+
+                            <div class="row margin-btm-20">
+                                <div class="col-md-2">
+                                    <div class="services-icon">
+                                        <i class="ion-images"></i>
+                                    </div> 
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="services-info">
+                                        <h3>Website design</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!--.services row end-->
+                            <div class="row margin-btm-20">
+                                <div class="col-md-2">
+                                    <div class="services-icon">
+                                        <i class="ion-speakerphone"></i>
+                                    </div> 
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="services-info">
+                                        <h3>Marketing </h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!--.services row end-->
+                            <div class="row margin-btm-20">
+                                <div class="col-md-2">
+                                    <div class="services-icon">
+                                        <i class="ion-leaf"></i>
+                                    </div> 
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="services-info">
+                                        <h3>Logo design </h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!--.services row end-->
+                            <div class="row margin-btm-20">
+                                <div class="col-md-2">
+                                    <div class="services-icon">
+                                        <i class="ion-speedometer"></i>
+                                    </div> 
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="services-info">
+                                        <h3>Search engine optimization(seo) </h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget viverra augue. Nunc dignissim rutrum tempor. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><!--.services row end-->
+                        </div>
+                    </div>
+                </div>
+            </div><!--services section 1 end-->
+            <div class="services-section-2 parallax" data-stellar-background-ratio="0.5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h1>Subscribe to Newsletter</h1>
+                            <form class="newsletter-form">
+                                <div class="row">
+                                    <div class="col-sm-4 col-sm-offset-4">
+                                        <div class="input-group">
+                                            <label class="sr-only" for="subscribe-email">Email address</label>
+                                            <input type="email" class="form-control" id="subscribe-email" placeholder="Enter your email">
+                                            <span class="input-group-btn">
+                                                <button type="submit" class="btn btn-theme-color btn-lg">OK</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div><!--services section 1 end-->
+        </section>
+        <!--section services end here-->
+
+
 
 
 <!-- i want my form to submit to /lists, the form tag to direct to a url, and then I'll make my route "undefine route posts".

@@ -1,41 +1,150 @@
 <%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:name, "Find another Twitter user:") %>
+  <%= label_tag(:name, "Find another Twitter user: @") %>
   <%= text_field_tag(:name,) %>
   <%= submit_tag("Search") %>
 <% end %>
 
+<ol>
+  <h4><%= "#{@name}'s Twitter Lists" %> </h4>
 <% @subscriptions.each do |twitter_list| %>
-  <%#= link_to name, list_data[:list_url], target: 'blank' %>
-  <%= link_to twitter_list.name, list_members_path(twitter_list.id)%>
-  <%# list_data[:list_members].each do |member| %>
-
-    <%#= link_to member[:user_name], member[:url], target: 'blank' %>
-  <%# end %>
+ <li> <%= link_to twitter_list.name, list_members_path(twitter_list.id)%></li>
 <% end %>
 
 
 <% @owned_lists.each do |twitter_list| %>
-  <%#= link_to name, list_data[:list_url], target: 'blank' %>
-  <%= link_to twitter_list.name, list_members_path(twitter_list.id)%>
-  <%# list_data[:list_members].each do |member| %>
-
-    <%#= link_to member[:user_name], member[:url], target: 'blank' %>
-  <%# end %>
-<% end %>
-
-
-
-
-<%# @twitter_owned_lists.each do |name, url| %>
-  <%#= link_to name, url, target: 'blank' %>
-<%# end %>
+  <li><%= link_to twitter_list.name, list_members_path(twitter_list.id)%></li> 
   
-<%# @twitter_list_members.each do |name, url| %>
-<%#= link_to name, url, target: 'blank' %>
-<%# end %>
+<% end %>
+</ol>
+
   
 
 <br>
 <br>
 <%= link_to "Home", "/" %>
 <%= link_to "Back", "/getting_a_twitter_list" %>
+
+
+<!-- 
+
+
+  <div class="services-section-1">
+      <div class="container">
+          <div class="section-heading text-center">
+              
+          </div><!--section heading-->             
+
+      </div><!--container-->
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="margin-btm-20">
+                      <h4>Twitter Lists</h4>
+                      
+                  </div>
+              </div>
+          </div>
+          <div class="ul">
+              <div class="col-md-6 wow animated fadeInLeft" data-wow-delay="0.3s">
+
+                  <div class="row margin-btm-20">
+                      <div class="col-md-2">
+                          <div class="services-icon">
+                              <i class="ion-images"></i>
+                          </div> 
+                      </div>
+                      <div class="col-md-10">
+                          <div class="services-info">
+                              <li><h3>Website design</h3></li>
+                              <p>
+                                 
+                              </p>
+                          </div>
+                      </div>
+                  </div><!--.services row end-->
+                  <div class="row margin-btm-20">
+                      <div class="col-md-2">
+                          <div class="services-icon">
+                              <i class="ion-speakerphone"></i>
+                          </div> 
+                      </div>
+                      <div class="col-md-10">
+                          <div class="services-info">
+                              <li><h3>Marketing </h3></li>
+                              <p>
+                                   
+                              </p>
+                          </div>
+                      </div>
+                  </div><!--.services row end-->
+                  <div class="row margin-btm-20">
+                      <div class="col-md-2">
+                          <div class="services-icon">
+                              <i class="ion-leaf"></i>
+                          </div> 
+                      </div>
+                      <div class="col-md-10">
+                          <div class="services-info">
+                              <li><h3>Logo design </h3></li>
+                              <p>
+                                  
+                              </p>
+                          </div>
+                      </div>
+                  </div><!--.services row end-->
+                  <div class="row margin-btm-20">
+                      <div class="col-md-2">
+                          <div class="services-icon">
+                              <i class="ion-speedometer"></i>
+                          </div> 
+                      </div>
+                      <div class="col-md-10">
+                          <div class="services-info">
+                              <li><h3>SEO </h3></li>
+                              <p>
+                                   
+                              </p>
+                          </div>
+                      </div>
+                  </div><!--.services row end-->
+              </div>
+              <div class="col-md-6 wow animated fadeInRight" data-wow-delay="0.6s">
+
+                  <div class="row margin-btm-20">
+                      <div class="col-md-2">
+                          <div class="services-icon">
+                              <i class="ion-images"></i>
+                          </div> 
+                      </div>
+                      </div>
+                  </div><!--.services row end-->
+              </div>
+          </div>
+      </div>
+  </div><!--services section 1 end-->
+  <div class="services-section-2 parallax" data-stellar-background-ratio="0.5">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12 text-center">
+                  <h1>Subscribe to Newsletter</h1>
+                  <form class="newsletter-form">
+                      <div class="row">
+                          <div class="col-sm-4 col-sm-offset-4">
+                              <div class="input-group">
+                                  <label class="sr-only" for="subscribe-email">Email address</label>
+                                  <input type="email" class="form-control" id="subscribe-email" placeholder="Enter your email">
+                                  <span class="input-group-btn">
+                                      <button type="submit" class="btn btn-theme-color btn-lg">OK</button>
+                                  </span>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div><!--services section 1 end-->
+        
+
+
+ -->
