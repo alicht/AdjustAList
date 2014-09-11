@@ -1,6 +1,6 @@
 class UserAddedListController < ApplicationController
   
-  def index
+  def welcome
     
   end
 

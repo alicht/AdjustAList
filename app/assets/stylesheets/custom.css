@@ -2,3 +2,45 @@
   background-color: #fff;
   text-align: left;
 }*/
+
+/*----------------WELCOME PAGE -------------------*/
+.custom-label{
+  background-color: #35bdf6;
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  text-shadow: none !important;
+  text-transform: uppercase;
+  box-shadow: none;
+  display: inline-block;
+  letter-spacing: 1px;
+  padding: 10px 16px;
+  margin-bottom: 0px;
+}
+
+.home-arrow-down .custom-search{
+  margin-bottom: 4px;
+  padding-left: 5px;
+
+}
+
+/*----------------SEARCH PAGE -------------------*/
+
+.search-results{
+  margin:auto;
+  background-image: url(/assets/light-blue-light.jpg);
+}
+
+/*----------------FORMAT RESULTS-------------------*/
+.format-results {
+  margin: auto;
+  width: 45%;
+  background-color: #ffffff;
+  padding: 25px;
+
+}
+.format-results h4 {
+  text-align: center;
+
+}
+/*----------------FORMAT RESULTS-------------------*/

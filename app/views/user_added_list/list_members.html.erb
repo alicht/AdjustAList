@@ -8,7 +8,7 @@
 <br>
 <br>
 
-<h4><%= "#{current_user.name}'s list of #{@subscriptions || @owned_lists}" %> </h4>
+<h4><%= "@ #{current_user.name}'s list of #{@subscriptions || @owned_lists}" %> </h4>
 
 <%= form_tag("list_members/#{@list_id}", method: "get") do %>
 <ol>

@@ -1,36 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Codeon - Agency</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--bootstrap css-->
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <!--custom css-->
-        <link href="css/style.css" rel="stylesheet" type="text/css">
-        <!--flex slider css-->
-        <link href="css/flexslider.css" rel="stylesheet">
-        <!--google web fonts css-->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
-        <!--ion icons css-->
-        <link href="icons/css/ionicons.min.css" rel="stylesheet">
-        <!--animated css-->
-        <link href="css/animate.css" rel="stylesheet">
-        <!--owl carousel css-->
-        <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="screen">
-        <link href="css/owl.theme.css" rel="stylesheet" type="text/css" media="screen">
-        <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="js/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body data-spy="scroll" data-target="#navigation" data-offset="80">
-
-
         <section id="home" data-stellar-background-ratio="0.5">
             <div class="parallax-overlay"></div> 
             <div class="home-content text-center">
@@ -40,6 +8,7 @@
                         <ul class="slides">
                             <li>
                                 <h1>Welcome to Adjust-A-List!</h1>
+                                <h3> Adjust-A-List allows you to search for, modify, and create a new Twitter list based off a user's pre-existing list </h3>
 
                             </li>
                             
@@ -47,7 +16,12 @@
                     </div> 
                     <h2 class="slide-btm-text">Please select a list from a Twitter user</h2>
                     <div class="home-arrow-down text-center">
-                        <p><%= link_to "A User's Twitter list", "/getting_a_twitter_list", class: "btn btn-lg btn-theme-color" %></p>
+            <%= form_tag("/search", method: "get") do %>
+              <%= label_tag(:name, "Enter a user's Twitter handle: @", class: "custom-label") %>
+              <%= text_field_tag(:name, nil, class: "custom-search") %>
+              <%= submit_tag("Search") %>
+              <% end %>
+                        <!-- <p><%= link_to "A User's Twitter list", "/getting_a_twitter_list", class: "btn btn-lg btn-theme-color" %></p> -->
                     </div>
                 </div>
             </div>
