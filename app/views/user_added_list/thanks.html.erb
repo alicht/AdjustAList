@@ -1,12 +1,22 @@
 <h1>"Thanks for using Adjust-A-List!"</h1>
 
-<h2><p> "Your list <%= link_to "#{@new_list.name}", "https://twitter.com/#{current_user.name}/lists/#{@new_list.name}"
+<h2><p> "Your list <%= link_to "#{@new_list.name}", "https://twitter.com/#{current_user.name}/lists/#{@new_list.name}", target: "blank" 
 %>  is now live on Twitter!"</h2></p>
 
 <%= text_area :person, :name, value: "I just created a new Twitter list #{@new_list.name} https://twitter.com/#{current_user.name}/lists/#{@new_list.name} using @AdjustAList. Check it out! www.adjustalist.com", size: "100x30" %>
 <br>
   <%= submit_tag("Tweet!") %>
   
+<a class="twitter-share-button"
+  href="https://twitter.com/share">
+Tweet
+</a>
+<script type="text/javascript">
+window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+</script>
+
+
 <br>
+<%= link_to "Create Another List", "/getting_a_twitter_list" %>
 <%= link_to "Back", "/search" %>
 <%= link_to "Home", "/" %>
