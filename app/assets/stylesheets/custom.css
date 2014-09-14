@@ -86,6 +86,8 @@
   position: relative;
   vertical-align: middle;
   z-index: 3;
+  margin-center: 0 auto;
+
 }
 .alpha{
   background-color: rgba(44,62,80,0.4);
@@ -95,4 +97,22 @@
 .search-form-div {
   padding: 20px 0 0 20px; 
 }
+
+.search-form-div label {
+
+}
+
+/*--------*/
+
+.thank-you{
+  jumbotron: 500px;
+  margin: auto;
+}
+
+.centered{
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+}
+
 
