@@ -8,13 +8,13 @@
 
 /*--------------base-------
 */
-html { 
-  background: url(/assets/Mountain_Bluebird.jpg) no-repeat center center fixed; 
+/*html { 
+  background: url(/assets/images/Mountain_Bluebird.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+}*/
 
 html, 
 body {

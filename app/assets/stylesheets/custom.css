@@ -28,7 +28,10 @@
 
 .search-results{
   margin:auto;
-  background-image: url(/assets/light-blue-light.jpg);
+  background-image: url(/assets/bluebirds.jpg);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 /*----------------FORMAT RESULTS-------------------*/
@@ -43,4 +46,53 @@
   text-align: center;
 
 }
-/*----------------FORMAT RESULTS-------------------*/
+.format-results blockquote {
+  padding: 1px 10px;
+  margin: 0 5px 10px;
+}
+/*----------------DOORMAT RESULTS-------------------*/
+.doormat-results {
+  margin: left;
+  width: 25%;
+  background-color: #ffffff;
+  padding: 25px;
+
+}
+.doormat-results h4 {
+  text-align: center;
+
+}
+
+/*----------------FLOORMAT RESULTS-------------------*/
+.floormat-results {
+  margin: auto;
+  width: 25%;
+  background-color: #ffffff;
+  padding: 25px;
+
+}
+
+/*----------------SHOREMAT RESULTS-------------------*/
+.shoremat-results {
+  margin: right;
+  width: 25%;
+  background-color: #ffffff;
+  padding: 25px;
+
+}
+/*----------------SEARCH-CONTENT-TEXT-CENTER-------------------*/
+.search-content-text-center{
+
+  position: relative;
+  vertical-align: middle;
+  z-index: 3;
+}
+.alpha{
+  background-color: rgba(44,62,80,0.4);
+}
+
+
+.search-form-div {
+  padding: 20px 0 0 20px; 
+}
+
