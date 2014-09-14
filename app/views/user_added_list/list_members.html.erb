@@ -1,63 +1,65 @@
+<div class ="entire-page">
 <div class = "search-results">
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:name, " Search for another Twitter User's lists: @", class: "custom-label") %>
-  <%= text_field_tag(:name,) %>
-  <%= submit_tag("Search") %>
-<% end %>
+        <%= form_tag("/search", method: "get") do %>
+          <%= label_tag(:name, " Search for another Twitter User's lists: @", class: "custom-label") %>
+          <%= text_field_tag(:name,) %>
+          <%= submit_tag("Search") %>
+        <% end %>
 
-<div class = "doormat-results"> 
-
-<%= link_to "Back", "/search" %>
-<br>
-<br>
+    <div class = "doormat-results"> 
+        <div class = "float">
+    <%= link_to "Back", "/search" %>
     
 
-<h4><%= "@ #{current_user.name}'s list of #{@subscriptions ||= @owned_lists}" %> </h4>
+    <h4><%= "@ #{current_user.name}'s list of #{@subscriptions ||= @owned_lists}" %> </h4>
 
-<%= form_tag("list_members/#{@list_id}", method: "get") do %>
-<ol>
-  <%= collection_check_boxes(:list, :usernames, @members, :screen_name, :name) do |b| %>
-    <li>
-     <%= b.check_box %>
-    <%= link_to b.text, "http://twitter.com/#{b.value}", target: "blank" %></li><br/>  
-  <% end %>
-</ol>
-</div>
-    <div class = "floormat-results">
-  <p><%= link_to  "Search Twitter to find users to add", "https://twitter.com" %> </p>
+    <%= form_tag("list_members/#{@list_id}", method: "get") do %>
+    <ol>
+        <%= collection_check_boxes(:list, :usernames, @members, :screen_name, :name) do |b| %>
+            <li>
+             <%= b.check_box %>
+            <%= link_to b.text, "http://twitter.com/#{b.value}", target: "blank" %></li><br/>  
+          <% end %>
+    </ol>
+        </div>
+    </div>
+    
+    <div class = "search-twitter-and-name-of-list">
+        <div class = "float">
+    <p><%= link_to  "Search Twitter to find users to add", "https://twitter.com" %> </p>
 
-
-  <br>
-  <br>
-  <div class="field"> 
-    <%= label_tag :name_of_list, 'Name of New List: '%><br>
-    <%= text_field_tag :name_of_list %><br>
+      <div class="field"> 
+        <%= label_tag :name_of_list, 'Name of New List: '%><br>
+        <%= text_field_tag :name_of_list %><br>
+      </div>
+    </div>
   </div>
-  <br>
-  <br>
-
-  <div class="field">
-    <label for"user_to_add">User(s) to Add: </label> <br> @
-    <input class=​"user_to_add" name="user_to_add[]" type="text">
-    <br>
+  
+  <div class="users-to-add">
+    <div class = "float">
+      <div class="field">
+        <label for"user_to_add">User(s) to Add: </label> <br> @
+        <input class=​"user_to_add" name="user_to_add[]" type="text">
+        
    
   </div>
 
-  <div id="usersWrapper"></div>
-  <div id="addUser"></div>
+      <div id="usersWrapper"></div>
+      <div id="addUser"></div>
 
-  <button type="button" id="add-user">Add another user!</button>
+      <button type="button" id="add-user">Add another user!</button>
   
  <!-- <a href="#" id="add-user">"Add another user!"</a> -->
-  <div class="action">
-    <%= submit_tag 'Submit' %>
-  </div>
-<% end %>
+      <div class="action">
+        <%= submit_tag 'Submit' %>
+      </div>
+    <% end %>
 
  <div class="hidden user-form">
     <label for"user_to_add">User to Add: </label> <br> @
     <input class=​"user_to_add" name="user_to_add[]" type="text">
         </div>
     </div>
+    </div>
   </div>
-
+</div>

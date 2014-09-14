@@ -63,8 +63,8 @@
 
 }
 
-/*----------------FLOORMAT RESULTS-------------------*/
-.floormat-results {
+
+.search-twitter-and-name-of-list {
   margin: auto;
   width: 25%;
   background-color: #ffffff;
@@ -72,8 +72,8 @@
 
 }
 
-/*----------------SHOREMAT RESULTS-------------------*/
-.shoremat-results {
+
+.users-to-add {
   margin: right;
   width: 25%;
   background-color: #ffffff;
@@ -115,4 +115,7 @@
   text-align: center;
 }
 
+.entire-page float {
+  float: left;
+}
 
