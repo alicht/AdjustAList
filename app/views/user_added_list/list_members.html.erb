@@ -1,5 +1,7 @@
 <div class ="entire-page">
 <div class = "search-results">
+    <div class="parallax-overlay alpha"></div>
+    <div class = "search-content-text-center">
         <%= form_tag("/search", method: "get") do %>
           <%= label_tag(:name, " Search for another Twitter User's lists: @", class: "custom-label") %>
           <%= text_field_tag(:name,) %>
@@ -11,7 +13,7 @@
     <%= link_to "Back", "/search" %>
     
 
-    <h4><%= "@ #{current_user.name}'s list of #{@subscriptions ||= @owned_lists}" %> </h4>
+    <h4><%= "@ #{current_user.name}'s #{@subscriptions ||= @owned_lists} list" %> </h4>
 
     <%= form_tag("list_members/#{@list_id}", method: "get") do %>
     <ol>
@@ -26,7 +28,7 @@
     
     <div class = "search-twitter-and-name-of-list">
         <div class = "float">
-    <p><%= link_to  "Search Twitter to find users to add", "https://twitter.com" %> </p>
+    <p><%= link_to  "Search Twitter to find users to add", "https://twitter.com", target: "blank" %> </p>
 
       <div class="field"> 
         <%= label_tag :name_of_list, 'Name of New List: '%><br>
@@ -38,7 +40,7 @@
   <div class="users-to-add">
     <div class = "float">
       <div class="field">
-        <label for"user_to_add">User(s) to Add: </label> <br> @
+        <label for"user_to_add">User to Add: </label> <br> @
         <input class=​"user_to_add" name="user_to_add[]" type="text">
         
    
@@ -62,4 +64,5 @@
     </div>
     </div>
   </div>
+</div>
 </div>
