@@ -13,7 +13,7 @@
     <%= link_to "Back", "/search" %>
     
 
-    <h4><%= "@ #{current_user.name}'s #{@subscriptions ||= @owned_lists} list" %> </h4>
+    <h4><%= "@ #{current_user.name}'s list of #{@list_name.name}" %> </h4>
 
     <%= form_tag("list_members/#{@list_id}", method: "get") do %>
     <ol>

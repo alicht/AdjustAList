@@ -1,6 +1,6 @@
 <div class="thank-you">
   <div class="centered">
-<h1>"Thanks for using Adjust-A-List!"</h1>
+<h1>"Thank you for using Adjust-A-List!"</h1>
 
 <h2><p> "Your list <%= link_to "#{@new_list.name}", "https://twitter.com/#{current_user.name}/lists/#{@new_list.name}", target: "blank" 
 %>  is now live on Twitter!"</h2></p>
@@ -17,8 +17,13 @@ Tweet
 window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
 </script>
 
+<!-- <textarea class="tweetmsg"></textarea>
+<a href="https://twitter.com/share?text=original tweet text" class="twitter-share-button" target="_blank">Tweet</a> -->
 
-
+<!-- web intents- https://dev.twitter.com/web/intents#tweet-intent
+ -->
+<!-- http://stackoverflow.com/questions/15226881/embedding-a-twitter-web-intent-tweet-box-in-a-page
+ -->
 <br>
 <%= link_to "Create Another List", "/getting_a_twitter_list" %>
 <%= link_to "Back", "/search" %>

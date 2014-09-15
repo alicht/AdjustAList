@@ -10,4 +10,12 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def require_authenticate
+    if current_user.nil? 
+        redirect_to root_path, notice: "You need to be signed in."
+        # flash[:notice] = "You need to sign in."
+        # redirect_to root_path   
+    end
+  end
+
 end

@@ -7,8 +7,10 @@ class GettingATwitterListController < ApplicationController
   def twitter_list
    
   end
-    
 
+  def no_list_found
     
+  end
+     
 
 end

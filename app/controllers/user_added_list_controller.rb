@@ -1,5 +1,6 @@
 class UserAddedListController < ApplicationController
-  
+  before_action :require_authenticate
+
   def welcome
     
   end
@@ -15,7 +16,7 @@ class UserAddedListController < ApplicationController
     @name = twitter_username
     @subscriptions = twitter_client.subscriptions(twitter_username)
     @owned_lists = twitter_client.owned_lists(twitter_username)
-
+    render template: "getting_a_twitter_list/no_list_found" if @subscriptions.count == 0 && @owned_lists.count == 0    
     end
   
 
@@ -29,6 +30,7 @@ class UserAddedListController < ApplicationController
     @name = params[:name]
     @list_id = params[:list_id].to_i 
     @members = twitter_client.list_members(@list_id)
+    @list_name = twitter_client.list(@list_id)
   end
 
   def remove_list_members
@@ -50,7 +52,6 @@ class UserAddedListController < ApplicationController
     @current_members = @current_members + params[:user_to_add]
     @new_list = twitter_client.create_list(params[:name_of_list])
     @add_members = twitter_client.add_list_members(@new_list, @current_members)
-    # @name = params
     render template: "user_added_list/thanks"
     # redirect_to thanks_path(@new_list.name)
       #redirect vs render
@@ -58,16 +59,7 @@ class UserAddedListController < ApplicationController
 
 
   def thanks
-    # twitter_client = Twitter::REST::Client.new do |config|
-    #   config.consumer_key        = ENV['twitter_consumer_key']
-    #   config.consumer_secret     = ENV['twitter_consumer_secret']
-    #   config.access_token        = ENV['twitter_access_token']
-    #   config.access_token_secret = ENV['twitter_access_token_secret']
-    # end
-    # binding.pry
-    # @name = params[:name]
-    # @new_list = twitter_client.create_list(params[:name_of_list])
-
+   
   end
 
   private

@@ -1,2 +1,12 @@
-<h1><%= "Sorry! @#{@name} doesn't have any Twitter lists. Please serach for another user's lists!" %>
+<div class = "no-list">
+<h1><%= "Sorry! @#{@name} doesn't have any Twitter lists. Please search for another user's lists!" %>
 </h1>
+
+<div class = "search-form-div">
+      <%= form_tag("/search", method: "get") do %>
+        <%= label_tag(:name, "Find another Twitter user: @",class: "custom-label") %>
+        <%= text_field_tag(:name,) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+    </div>
+  </div>

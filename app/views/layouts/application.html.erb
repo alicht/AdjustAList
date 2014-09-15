@@ -4,7 +4,7 @@
   <title>Adjustalist</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="icon" type="image/png" href="http://www.favicon.cc/?action=icon&file_id=769656">
-  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAABjlIQAT39zADeWiwBaeWoAiY6nAGB9bQBXhnYAUol/AK9WAQBpem0AVWdZAF2JdgBcGQEAYoZ2AGCIfABEfW4Ai1oFAGmDdgBijnwAX5CCAGKPfwCyagcAJYJsAHeAdgB0gnwAiJqNAH5+cABllYgAaZGFACRqQABtkIIAaZSFAL9uAQBtkYUAX3lrAPqQCwBgeWsAc4uFAGiZiwCMQQMAiGU4ADxgjQBkem4AXIJ0AFqGdwBifnEAZ3xrAF2DdwBbh3oAWYp6AF6JdwBeiH0AXIyAACUiHgB9mIgAaYdxAEd9bwBvf3QAS01VAGiLfQBkj4AALqN+AExXTwBik4MAtc7xAFp0ZgBlkIMAJmGaAF11aQBafW8AYXhpAHGOhgCLopQAYIBvAGN9bwBggXIATGF2AFmMeABmfnIAfpCDAF2JeAAlPk4Ah4uGAJeZrwDYpGwAfpWSAIYsBQCClZIAdn14AIWbiQB8ZDcAvGoAAGmGkwB6ZEAAbo+BAG6RhwCOnY8Af39+AGB7agBnmpAAXIBwAGN5bQBhgXMAz2oAAEZyawBainwAfJOEAF6JeQBjhnkAw0YBAGWDeQBVclkAgJiKAIaRhwBqiHYAS39uAABcNQBOfnQAXnBlAFd2bgCJnI0AbZF/AEpkVABukX8Ap08CAHeHfABxkIUASnatACNowwBlfXEAiFIDAEdISQBoe3QASHhjAGCGegDHfwEAXmFmAG14hgBnh30Ac31xAEA3MgDEjWkAa3+JAJS/nAAwf14AlmYAAImYlABae2wAfn16AGuVgwBkmY8AWoFsAF97bACAfn0A0lgCAH6HfQBegm8AZnhsAHSRiQBYiHgAX4NyAFyGewD+YwcAilUEAGiAcgDPcwIA1XMCAE1aSgBviYQAe394AFSAcwBplYQAY3ZnAHaPewBjd2oAV4NzAHWKhwBvk4cAlKrTAFuAcwB8in4AkKGVAIaBfgBdh3YAUWxcAH+NhwBfiHkAY412AFNggABiin8A1HMDAGCOggCucA0AWnVlAGOShQBRfm4AZZSCAGiRggBuin8AU4FuAFZ8cQBwY1wAW3prAFx8aABidWUAbZGCAGuVhQCBfHkAXHxxAFWGdABTiHoAVEElAFaHdwBxlogAFlk4AHObhQBbjH0AZ4R3AB9WQQBFfm8AZ4N9AGyDdABhjYAAT3dsAIOSjgBvg3QAPT4vAGuIegBRf2kA1OD2AHeAfQBtkIAAV4BsAFt9bACHXzYAWnp1AG2XjABYh3gAZXtvAFqHeACSkqkAWot7AF2IewABblQAXIt7AKtmAwBajYEAYYZ+AIKVhgBxfHIAY49+AGGSfgBkj34AS35wAAAAAAAAAAAALDMG5Au7USnlmD0dkNrXjzgH/JxJMAS8si0ydFzWuKdoPtPQZu9TQDnjEUMCFoUKd9uD4jse8J5Ye3J/gPN6y8gPfolHTIzr5vhqjqHBby7fc6ptyTqIbBhgWa02NyIkL/11NChdWpHgtXi0cN1G6K/D0fbqEKOHkkhxm0/hYpefQjEOVoL1plUZUmF9rHZk8VATac4MfL6luZmU+UGEA2vYEgH7oo0gI7DPqQmghkTy1E23+hRbZxVXthfMysfc7dI/9/GreZrANRqLripuDfQAlr/CHyEIJ1SkZelOSpPelSYbH1+xvSXZHLoFnYGzY+zVPOeozcXGil7ES+5FKwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+  <%= favicon_link_tag 'favicon.ico'%>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
         <title>Codeon - Agency</title>
@@ -34,7 +34,6 @@
         <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#navigation" data-offset="80"> 
-
    <section id="navigation">
             <div class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="container">
@@ -64,7 +63,7 @@
                 </div><!--/.container -->
             </div>
         </section><!--navigation section end here-->
-  
+  <div class="notice"> <%= notice %></div>
           <!-- <div id="user_nav">
             <% if current_user%>
               Signed in as @<%= current_user.name %>
