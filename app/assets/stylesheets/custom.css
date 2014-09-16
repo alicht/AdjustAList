@@ -28,7 +28,8 @@
 
 .search-results{
   margin:auto;
-  background-image: url(/assets/bluebirds.jpg);
+  /*background-image: image-url("bluebirds.jpg");*/
+  background-image: asset-url("bluebirds.jpg", image);
   background-size: 100%;
   background-repeat: repeat;
   background-attachment: fixed;
