@@ -27,12 +27,13 @@
 /*----------------SEARCH PAGE -------------------*/
 
 .search-results{
-  margin:auto;
+  margin: 0 auto;
   background-image: image-url("bluebirds.jpg");
   /*background-image: asset-url("bluebirds.jpg", image);*/
   background-size: 100%;
   background-repeat: repeat;
   background-attachment: fixed;
+  height: 100%;
 }
 
 /*----------------FORMAT RESULTS-------------------*/
@@ -65,22 +66,11 @@
 }
 
 
-.search-twitter-and-name-of-list {
-  margin: auto;
-  width: 25%;
+.list-members, .search-twitter-and-name-of-list, .users-to-add {
   background-color: #ffffff;
   padding: 25px;
-
 }
 
-
-.users-to-add {
-  margin: right;
-  width: 25%;
-  background-color: #ffffff;
-  padding: 25px;
-
-}
 /*----------------SEARCH-CONTENT-TEXT-CENTER-------------------*/
 .search-content-text-center{
 
@@ -106,9 +96,10 @@
 
 /*--------*/
 
-.thank-you{
-  jumbotron: 500px;
-  margin: auto;
+div.thank-you{
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .centered{
