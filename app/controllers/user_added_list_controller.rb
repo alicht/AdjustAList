@@ -15,7 +15,19 @@ class UserAddedListController < ApplicationController
     twitter_username = params[:name]
     @name = twitter_username
     @subscriptions = twitter_client.subscriptions(twitter_username)
+    @subscriptions.to_a.each do |list|
+      if list.member_count != 0
+        @subscriptions.to_a.delete(list)
+      end
+    end
+    @subscriptions
     @owned_lists = twitter_client.owned_lists(twitter_username)
+    @owned_lists.to_a.each do |list|
+      if list.member_count != 0
+        @owned_lists.to_a.delete(list)
+      end
+    end
+    @owned_lists
     render template: "getting_a_twitter_list/no_list_found" if @subscriptions.count == 0 && @owned_lists.count == 0    
     end
   
@@ -31,6 +43,9 @@ class UserAddedListController < ApplicationController
     @list_id = params[:list_id].to_i 
     @members = twitter_client.list_members(@list_id)
     @list_name = twitter_client.list(@list_id)
+    if @members.to_a.empty?
+
+    end
   end
 
   def remove_list_members
