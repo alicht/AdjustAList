@@ -34,6 +34,7 @@ class UserAddedListController < ApplicationController
     @list_id = params[:list_id].to_i 
     @members = twitter_client.list_members(@list_id)
     @list_name = twitter_client.list(@list_id)
+    @list_owner = @list_name.user.user_name
   end
 
   def remove_list_members

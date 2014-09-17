@@ -1,35 +1,36 @@
 <div class="search-results">
-<div class ="entire-page container">
-     
-<!--         <div class="parallax-overlay alpha"></div>
- -->        <div class = "search-content-text-center">
+    <div class ="entire-page container">
+        <div class = "search-content-text-center">
             <%= form_tag("/search", method: "get") do %>
-            <%= label_tag(:name, " Search for another Twitter User's lists: @", class: "custom-label") %>
-            <%= text_field_tag(:name,) %>
-            <%= submit_tag("Search") %>
+                <%= label_tag(:name, " Search for another Twitter User's lists: @", class: "custom-label") %>
+                <%= text_field_tag(:name,) %>
+                <%= submit_tag("Search") %>
             <% end %>
-            </div>
-            <div class = "row">
-        <div class="list-members col-sm-3">
-            <!-- <div class = "doormat-results">  -->
-                <div class = "float">
-                    <%= link_to "Back", "/search" %>
+        </div>
+
+        <div class = "row">
+            <%= form_tag("list_members/#{@list_id}", method: "get") do %>
+
+                <div class="list-members col-sm-3">
+                <!-- <div class = "doormat-results">  -->
+                    <div class = "float">
+                        <%= link_to "Back", "/search" %>
 
 
-                    <h4> @ <%= link_to "#{@name}", "https://twitter.com/#{@name}", target: "blank" %>'s list of <%= "#{@list_name.name}" %> </h4>
-
-                    <%= form_tag("list_members/#{@list_id}", method: "get") do %>
-                    <ol>
-                        <%= collection_check_boxes(:list, :usernames, @members, :screen_name, :name) do |b| %>
-                        <li>
-                            <%= b.check_box %>
-                            <%= link_to b.text, "http://twitter.com/#{b.value}", target: "blank" %></li><br/>  
+                        <h4> @ <%= link_to @list_owner, "https://twitter.com/#{@list_owner}", target: "blank" %>'s list of <%= "#{@list_name.name}" %> 
+                        </h4>
+                        <ol>
+                            <%= collection_check_boxes(:list, :usernames, @members, :screen_name, :name) do |b| %>
+                                <li>
+                                    <%= b.check_box %>
+                                    <%= link_to b.text, "http://twitter.com/#{b.value}", target: "blank" %>
+                                </li>
                             <% end %>
                         </ol>
                     </div>
                 </div>
-             
-             
+                 
+                 
                 <div class="col-sm-3 col-sm-offset-1 search-twitter-and-name-of-list">
                     <div class = "float">
                         <p><%= link_to  "Search Twitter to find users to add", "https://twitter.com", target: "blank" %> </p>
@@ -57,11 +58,11 @@
                         <div class="action">
                             <%= submit_tag 'Submit' %>
                         </div>
-                        <% end %>
 
                     </div>
                 </div>
-            </div>
+            <% end %>
+        </div>
         
 
         <div class="hidden user-form">
@@ -70,6 +71,3 @@
         </div>
     </div> 
 </div>
-  </div>
-
-
