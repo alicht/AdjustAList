@@ -78,7 +78,11 @@
   vertical-align: middle;
   z-index: 3;
   margin-center: 0 auto;
+  padding: 20px 0;
 
+}
+.search-content-text-center input {
+  margin-bottom: 3px;
 }
 .alpha{
   background-color: rgba(44,62,80,0.4);
@@ -88,6 +92,9 @@
 .search-form-div {
   padding: 20px 0 0 20px; 
   margin-bottom: 4px;
+}
+.search-form-div input {
+  margin-bottom: 3px;
 }
 
 .search-form-div label {
@@ -101,7 +108,9 @@ div.thank-you{
   display: inline-block;
   vertical-align: middle;
 }
-
+.thank-you textarea {
+  height: 70px;
+}
 .centered{
   position: relative;
   vertical-align: middle;
@@ -119,6 +128,17 @@ div.thank-you{
   background-size: 100%;
   background-repeat: repeat;
   background-attachment: fixed;*/
+  max-width: 1082px;
+}
+.no-list h1 {
+  font-size: 58px;
+}
+.no-list input {
+  margin-bottom: 3px;
+}
+.thank-you {
+  margin-top: 100px !important;
+  background-color: rgba(255, 255, 255, 0.79);
 }
 
 .notice{
