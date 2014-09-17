@@ -16,7 +16,7 @@
                     <%= link_to "Back", "/search" %>
 
 
-                    <h4><%= "@ #{current_user.name}'s list of #{@list_name.name}" %> </h4>
+                    <h4> @ <%= link_to "#{@name}", "https://twitter.com/#{@name}", target: "blank" %>'s list of <%= "#{@list_name.name}" %> </h4>
 
                     <%= form_tag("list_members/#{@list_id}", method: "get") do %>
                     <ol>

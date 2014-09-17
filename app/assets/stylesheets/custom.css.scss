@@ -28,7 +28,7 @@
 
 .search-results{
   margin: 0 auto;
-  background-image: image-url("bluebirds.jpg");
+  background-image: image-url("flock.jpg");
   /*background-image: asset-url("bluebirds.jpg", image);*/
   background-size: 100%;
   background-repeat: repeat;
@@ -125,5 +125,25 @@ div.thank-you{
   font-size: 20px;
 
 
+}
+
+.thank-you-results{
+  margin: 0 auto;
+  background-image: image-url("sunset.jpg");
+  /*background-image: asset-url("bluebirds.jpg", image);*/
+  background-size: 100%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+.page-not-found{
+  margin: 0 auto;
+  background-image: image-url("seagull.jpg");
+  /*background-image: asset-url("bluebirds.jpg", image);*/
+  background-size: 100%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  height: 100%;
 }
 
