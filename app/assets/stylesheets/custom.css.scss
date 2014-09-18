@@ -32,8 +32,17 @@
   background-size: 100%;
   background-repeat: repeat;
   background-attachment: fixed;
-/*  height: 100%;
-*/}
+/*  height: 100%*/;
+}
+
+.list-members-results{
+  margin: 0 auto;
+  background-image: image-url("flock.jpg");
+  background-size: 100%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  height: 100%;
+}
 
 /*----------------FORMAT RESULTS-------------------*/
 .format-results {
