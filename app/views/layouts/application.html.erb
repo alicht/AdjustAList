@@ -63,10 +63,12 @@
           </div><!--/.container -->
       </div>
   </section><!--navigation section end here-->
-
-<!--         <div class="alert alert-info">
-          <%#= notice %>
-        </div> -->
+          
+          <% if notice.present? %>
+        <div class="alert alert-info">
+          <%= notice %>
+          <% end %>
+        </div>
 
           <!-- <div id="user_nav">
             <% if current_user%>

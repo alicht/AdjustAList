@@ -142,7 +142,7 @@ div.thank-you{
 
 .notice{
   font-size: 20px;
-
+  z-index: 999;
 
 }
 
@@ -164,5 +164,12 @@ div.thank-you{
   background-repeat: repeat;
   background-attachment: fixed;
   height: 100%;
+}
+
+.alert.alert-info{
+  z-index: 1000;
+  position: relative;
+  margin-bottom: 0 !important;
+
 }
 
