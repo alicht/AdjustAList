@@ -14,13 +14,22 @@ class UserAddedListController < ApplicationController
     end
     twitter_username = params[:name]
     @name = twitter_username
-    subscriptions = twitter_client.subscriptions(twitter_username)
+    begin
+      subscriptions = twitter_client.subscriptions(twitter_username)
+    rescue Twitter::Error::NotFound
+      render template: "getting_a_twitter_list/user_doesn't_exist", status: :not_found and return 
+    end
     @subscriptions = subscriptions.to_a.reject {|list| list.member_count == 0}
     owned_lists = twitter_client.owned_lists(twitter_username)
     @owned_lists = owned_lists.to_a.reject {|list| list.member_count == 0}
+        
+    render template: "getting_a_twitter_list/no_list_found" if @subscriptions.count == 0 && @owned_lists.count == 0
+  # else
+  #   render template: "getting_a_twitter_list/user_doesn't_exist", status: :not_found if subscriptions || owned_lists = nil  
+end
     
-    render template: "getting_a_twitter_list/no_list_found" if @subscriptions.count == 0 && @owned_lists.count == 0    
-  end
+
+  
   
 
   def list_members

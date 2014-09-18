@@ -1,0 +1,16 @@
+<div class="page-not-found centered">
+  <div class="centered thank-you jumbotron">
+<div class = "no-list">
+<h1>"Sorry! That user doesn't exist. Please search for another user!"
+</h1>
+
+<div class = "search-form-div">
+      <%= form_tag("/search", method: "get") do %>
+        <%= label_tag(:name, "Find another Twitter user: @",class: "custom-label") %>
+        <%= text_field_tag(:name,) %>
+        <%= submit_tag("Search") %>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

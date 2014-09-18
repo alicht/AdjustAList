@@ -7,9 +7,11 @@
 
 <%= text_area :person, :name, value: "I just created a new Twitter list '#{@new_list.name}' (https://twitter.com/#{current_user.name}/lists/#{@new_list.name}) using @AdjustAList. Check it out! www.adjustalist.com", size: "100x50" %>
 <br>
-<%#= submit_tag("Tweet!") %>
-  
-<a class="twitter-share-button" href="https://twitter.com/share?text=<%= URI.encode("I just created a new Twitter list #{@new_list.name} https://twitter.com/#{current_user.name}/lists/#{@new_list.name} using @AdjustAList. Check it out!") %>" target="_blank">Tweet</a>
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://adjustalist.com" data-text="I just created a new Twitter list '<%=@new_list.name%>' (https://twitter.com/<%=current_user.name%>/lists/<%=@new_list.name%>) using @AdjustAList. Check it out!" data-via="">Tweet</a>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 <script type="text/javascript">
 window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
