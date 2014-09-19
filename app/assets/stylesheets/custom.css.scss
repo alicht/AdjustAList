@@ -27,22 +27,47 @@
 /*----------------SEARCH PAGE -------------------*/
 
 .search-results{
-  margin: 0 auto;
-  background-image: image-url("flock.jpg");
-  background-size: 100%;
+  background-color: #444;
+  background-position: center 0%;
+  background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
-/*  height: 100%*/;
+  background-image: asset-url("flock.jpg", image);
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
 }
 
-.list-members-results{
+/*.search-results{
   margin: 0 auto;
   background-image: image-url("flock.jpg");
   background-size: 100%;
   background-repeat: repeat;
   background-attachment: fixed;
-/*  height: 100%;
-*/}
+/*  height: 100%*/
+
+.list-members-results{
+  background-color: #444;
+  background-position: center 0%;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-image: asset-url("flock.jpg", image);
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+/*.list-members-results{
+  margin: 0 auto;
+  background-image: image-url("flock.jpg");
+  background-size: 100%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  height: 100%;
+}*/
 
 /*----------------FORMAT RESULTS-------------------*/
 .format-results {
@@ -158,7 +183,6 @@ div.thank-you{
 .thank-you-results{
   margin: 0 auto;
   background-image: image-url("sunset.jpg");
-  /*background-image: asset-url("bluebirds.jpg", image);*/
   background-size: 100%;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -168,7 +192,6 @@ div.thank-you{
 .page-not-found{
   margin: 0 auto;
   background-image: image-url("seagull.jpg");
-  /*background-image: asset-url("bluebirds.jpg", image);*/
   background-size: 100%;
   background-repeat: repeat;
   background-attachment: fixed;
