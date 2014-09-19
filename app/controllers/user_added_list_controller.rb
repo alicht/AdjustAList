@@ -9,8 +9,8 @@ class UserAddedListController < ApplicationController
     twitter_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['twitter_consumer_key']
       config.consumer_secret     = ENV['twitter_consumer_secret']
-      config.access_token        = ENV['twitter_access_token']
-      config.access_token_secret = ENV['twitter_access_token_secret']
+      config.access_token        = session[:twitter_access_token]
+      config.access_token_secret = session[:twitter_access_token_secret]
     end
     twitter_username = params[:name]
     @name = twitter_username
@@ -36,8 +36,8 @@ end
     twitter_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['twitter_consumer_key']
       config.consumer_secret     = ENV['twitter_consumer_secret']
-      config.access_token        = ENV['twitter_access_token']
-      config.access_token_secret = ENV['twitter_access_token_secret']
+      config.access_token        = session[:twitter_access_token]
+      config.access_token_secret = session[:twitter_access_token_secret]
     end
     @name = params[:name]
     @list_id = params[:list_id].to_i 
@@ -50,8 +50,8 @@ end
     twitter_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['twitter_consumer_key']
       config.consumer_secret     = ENV['twitter_consumer_secret']
-      config.access_token        = ENV['twitter_access_token']
-      config.access_token_secret = ENV['twitter_access_token_secret']
+      config.access_token        = session[:twitter_access_token]
+      config.access_token_secret = session[:twitter_access_token_secret]
     end
     @list_id = params[:id].to_i 
 

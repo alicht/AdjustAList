@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/search', to: 'user_added_list#find_new_user_to_add'
   get '/index', to: 'user_added_list#index'
   get "/list_members/:list_id" => 'user_added_list#list_members', as: "list_members" 
-  get "/list_members/:list_id/:id" => 'user_added_list#remove_list_members', as: "remove_list_members"
+  # get "/list_members/:list_id/:id" => 'user_added_list#remove_list_members', as: "remove_list_members"
+  post "/list_members/:id" => 'user_added_list#remove_list_members', as: "remove_list_members"
   get 'thanks' => 'user_added_list#thanks', as: "thanks"
 end
