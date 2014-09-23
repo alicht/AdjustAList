@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  rescue_from Twitter::Error::TooManyRequests, with: :too_many_requests
+  
+
   private
 
   def current_user
@@ -16,6 +19,10 @@ class ApplicationController < ActionController::Base
         # flash[:notice] = "You need to sign in."
         # redirect_to root_path   
     end
+  end
+
+  def too_many_requests
+    render template: "getting_a_twitter_list/rate_limit"
   end
 
 end

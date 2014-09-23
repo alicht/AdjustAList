@@ -11,6 +11,10 @@ class GettingATwitterListController < ApplicationController
   def no_list_found
     
   end
+
+  def rate_limit
+
+  end
      
 
 end
