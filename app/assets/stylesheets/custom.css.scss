@@ -167,6 +167,7 @@ div.thank-you{
 .no-list input {
   margin-bottom: 3px;
 }
+
 .thank-you {
   margin-top: 100px !important;
   background-color: rgba(255, 255, 255, 0.79);
@@ -216,7 +217,19 @@ div.rate-limit-results{
 
 }
 
+.thank-you {
+  margin-top: 40px !important;
+}
+
+iframe {
+  width: 500px;
+}
+
 .jumbotron {
   padding-top: 2px;
-  padding: 177px;
+  padding: 10px;
   }
+
+.apology-message-and-video {
+  width: 900px;
+}
