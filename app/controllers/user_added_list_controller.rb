@@ -19,7 +19,6 @@ class UserAddedListController < ApplicationController
     rescue Twitter::Error::NotFound
       render template: "getting_a_twitter_list/user_doesn't_exist", status: :not_found and return
     end
-
     @subscriptions = subscriptions.to_a.reject {|list| list.member_count == 0}
     owned_lists = twitter_client.owned_lists(twitter_username)
     @owned_lists = owned_lists.to_a.reject {|list| list.member_count == 0}
