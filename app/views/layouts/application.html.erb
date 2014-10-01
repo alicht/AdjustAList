@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Adjustalist</title>
+  <title>Adjust-A-List</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="icon" type="image/png" href="http://www.favicon.cc/?action=icon&file_id=769656">
   <%= favicon_link_tag 'favicon.ico'%>
@@ -81,6 +81,10 @@
           
           
   <%= yield %>
+
+  <footer class="footer">
+     <div class="by-alicht"><b>Created by <%=link_to "@alicht", "https://twitter.com/alicht",target: "blank" %></b><font color="white">_______</font><b>To read about the creation of Adjust-A-List, <%= link_to "click here!", "https://medium.com/@alicht/introducing-adjust-a-list-769217b8afaa",target: "blank" %></b> </div>  
+      </footer>
           
         
 </body>
