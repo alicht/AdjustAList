@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.4.2'
 
 gem 'pry'
-gem 'rails', '4.1.4'
+gem 'rails', '4.2.8'
 gem 'pg'
 gem 'bootstrap-sass'
 gem 'sass-rails', '>= 3.2'
@@ -22,6 +22,11 @@ gem 'omniauth-twitter'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'rails_12factor'
+gem 'responders', '~> 2.0'
+
+group :development do
+  gem 'web-console', '~> 2.0'
+end
 
 
 # Use debugger
