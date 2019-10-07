@@ -118,7 +118,7 @@ GEM
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
-    pg (1.1.4)
+    pg (0.21.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -226,7 +226,7 @@ DEPENDENCIES
   jquery-rails
   omniauth
   omniauth-twitter
-  pg
+  pg (~> 0.18)
   pry
   rails (= 4.2.8)
   rails_12factor

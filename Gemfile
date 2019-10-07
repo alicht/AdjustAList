@@ -4,7 +4,7 @@ ruby '2.5.7'
 
 gem 'pry'
 gem 'rails', '4.2.8'
-gem 'pg'
+gem 'pg', '~> 0.18'
 gem 'bootstrap-sass'
 gem 'sass-rails', '>= 3.2'
 gem 'autoprefixer-rails'
